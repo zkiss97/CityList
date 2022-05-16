@@ -14,14 +14,13 @@ namespace CityList
             this.listSize = 0;
         }
 
-        public int setDb()
+        public void setDb()
         {
             Console.WriteLine("Add meg hány városnevet akarsz eltárolni");
             listSize = int.Parse(Console.ReadLine());
-            return listSize;
         }
 
-        public void setNevek(int listSize)
+        public void setNevek()
         {
             Console.WriteLine("Add meg a neveket");
             
@@ -95,14 +94,28 @@ namespace CityList
                 Console.WriteLine("A név hozzáadásra került");
                 Cities.Add(nameCheck);
             }
-
         }
+
+        public void delLast()
+        {
+            Cities.Remove(Cities[listSize]);
+        }
+
     }
     class Program
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            CityNameList cnl1 = new CityNameList();
+
+            cnl1.setDb();
+            cnl1.setNevek();
+            cnl1.getNevek();
+            cnl1.getVan();
+            cnl1.delNev();
+            cnl1.delLast();
+            cnl1.getNevek();
+
 
             
         }
