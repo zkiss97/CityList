@@ -84,7 +84,7 @@ namespace CityList
                 if (nameCheck == Cities[i])
                 {
                     Console.WriteLine("A megadott név törlésre került a listából");
-
+                    Cities.Remove(Cities[i]);
                     nameExists = true;
                     break;
                 }
@@ -92,7 +92,8 @@ namespace CityList
 
             if (!nameExists)
             {
-                Console.WriteLine("A név NEM szerepel a listában");
+                Console.WriteLine("A név hozzáadásra került");
+                Cities.Add(nameCheck);
             }
 
         }
